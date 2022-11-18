@@ -46,7 +46,7 @@ describe('WebElements Test cases', () => {
     await browser.pause(7000);
 
     // If female gender is NOT selected, then click on female gender radio button
-    if (expect(isFemaleGenderSelected, 'Female gender is already selected').to.be.false) {
+    if (!isFemaleGenderSelected) {
         const femaleRadioButton = await $('input[value="1"]');
         femaleRadioButton.click();
     }
@@ -56,7 +56,7 @@ describe('WebElements Test cases', () => {
     // Verify female-gender button is selected
     const femaleRadioButton1 = await $('input[value="1"]');
     const isFemaleGenderSelected1 = await femaleRadioButton1.isSelected();
-    expect(isFemaleGenderSelected1, 'Female gender is already selected').to.be.true;
+    expect(isFemaleGenderSelected1, 'Female gender is not selected').to.be.true;
 
 
 });
