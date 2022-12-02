@@ -143,6 +143,14 @@ class Commands {
         return await browser.switchToWindow(newHandle);
     }
 
+    // function to getTitle()
+    async getWebPageTitle() {
+        return await browser.getTitle();
+    }
 
+    // closeWindow()
+    async closeThisWindow() {
+        await browser.closeWindow();
+    }
 }
 module.exports = Commands;
